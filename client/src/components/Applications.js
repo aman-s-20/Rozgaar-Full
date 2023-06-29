@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
   statusBlock: {
     width: "100%",
     height: "20%",
-    bottom:"0",
-    top:"90",
+    bottom: "0",
+    top: "90",
     borderRadius: "5%",
     display: "flex",
     alignItems: "center",
@@ -130,11 +130,11 @@ const ApplicationTile = (props) => {
   };
 
   return (
-    <Paper className={classes.jobTileOuter} elevation={3} style={{color: 'white'}}>
+    <Paper className={classes.jobTileOuter} elevation={3} style={{ color: 'white' }}>
       <Grid container>
         <Grid container item xs={9} spacing={1} direction="column">
           <Grid item>
-            <Typography variant="h5" style={{fontWeight: 'bold',textTransform: 'uppercase',marginBottom:"2px"}}>{application.job.title}</Typography>
+            <Typography variant="h5" style={{ fontWeight: 'bold', textTransform: 'uppercase', marginBottom: "2px" }}>{application.job.title}</Typography>
           </Grid>
           <Grid item>Posted By: {application.recruiter.name}</Grid>
           <Grid item>Role : {application.job.jobType}</Grid>
@@ -152,7 +152,7 @@ const ApplicationTile = (props) => {
           </Grid>
           <Grid item>Applied On: {appliedOn.toLocaleDateString()}</Grid>
           {application.status === "accepted" ||
-          application.status === "finished" ? (
+            application.status === "finished" ? (
             <Grid item>Joined On: {joinedOn.toLocaleDateString()}</Grid>
           ) : null}
         </Grid>
@@ -168,8 +168,7 @@ const ApplicationTile = (props) => {
               {application.status}
             </Paper>
           </Grid>
-          {application.status === "accepted" ||
-          application.status === "finished" ? (
+          {application.status === "accepted" ||application.status === "finished" ? (
             <Grid item>
               <Button
                 variant="contained"
@@ -225,9 +224,9 @@ const Applications = (props) => {
   const [applications, setApplications] = useState([]);
 
   useEffect(() => {
-   
+
     getData();
-     // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   const getData = () => {
@@ -258,17 +257,17 @@ const Applications = (props) => {
       item
       direction="column"
       alignItems="center"
-      style={{ padding: "30px", minHeight: "95vh",backgroundColor:"black" }}
+      style={{ padding: "30px", minHeight: "95vh", backgroundColor: "black" }}
     >
       <Grid item>
-      <Typography variant="h4" style={{fontWeight: "bold",textTransform: "uppercase",color: "white"}} className="title">Applications</Typography>
+        <Typography variant="h4" style={{ fontWeight: "bold", textTransform: "uppercase", color: "white" }} className="title">Applications</Typography>
       </Grid>
       <Grid
         container
         item
         xs
         direction="column"
-        style={{ width: "100%",marginTop: "30px"}}
+        style={{ width: "100%", marginTop: "30px" }}
         // alignItems="stretch"
         justify="center"
         className="apply1"
@@ -276,16 +275,16 @@ const Applications = (props) => {
 
         {applications.length > 0 ? (
           applications.map((obj) => (
-            <Grid item xs={24} sm={24} lg={6} style={{margin:"10px"}}>
+            <Grid item xs={24} sm={24} lg={6} style={{ margin: "10px" }}>
               <ApplicationTile application={obj} />
             </Grid>
           ))
         ) : (
-          <Typography variant="h5" style={{ textAlign: "center",color:"white" }}>
+          <Typography variant="h5" style={{ textAlign: "center", color: "white" }}>
             No Applications Found
           </Typography>
         )}
-        
+
       </Grid>
     </Grid>
   );

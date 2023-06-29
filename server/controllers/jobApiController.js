@@ -1311,7 +1311,7 @@ async function addOrUpdateRating(req, res) {
 }
 
 
-async function jobApiController(req, res) {
+async function getPersonalRating(req, res) {
     const user = req.user;
     Rating.findOne({
         senderId: user._id,
@@ -1332,7 +1332,6 @@ async function jobApiController(req, res) {
 
 
 
-
 module.exports = {
     addNewJob,
     listJobs,
@@ -1348,6 +1347,6 @@ module.exports = {
     updateJobStatus,
     getListofFinalApplicant,
     addOrUpdateRating,
-    jobApiController
+    getPersonalRating
 
 }
