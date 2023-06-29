@@ -155,7 +155,7 @@ const JobTile = (props) => {
 
   return (
     <Paper className={classes.jobTileOuter} elevation={3} style={{color: "white"}}>
-      <Grid container>
+      <Grid container >
         <Grid container item xs={9} spacing={1} direction="column">
           <Grid item>
             <Typography variant="h5">{job.title}</Typography>
@@ -850,18 +850,17 @@ const MyJobs = (props) => {
         </Grid>
 
         <Grid
-          container
+          container spacing={2}
           item
           xs
           direction="column"
-          // alignItems="stretch"
           justify="center"
-          style={{ width: "100%",marginTop: "-20px"}}
+          style={{ width: "100%",marginTop: "50px", paddingTop: "180px"}}
           className="apply"
         >
           {jobs.length > 0 ? (
           jobs.map((job) => (
-            <Grid item xs={24} sm={24} lg={6} style={{margin:"10px"}}>
+            <Grid item xs={24} sm={24} lg={24} style={{margin:"10px"}}>
                <JobTile job={job} getData={getData} />;
             </Grid>
           ))
