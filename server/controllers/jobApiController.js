@@ -520,6 +520,8 @@ async function applyForJob(req, res) {
                                             Application.countDocuments({
                                                 userId: user._id,
                                                 status: "accepted",
+                                                jobId: jobId,
+                                                recruiterId: job.userId,
                                             }).then((acceptedJobs) => {
                                                 if (acceptedJobs === 0) {
                                                     const application = new Application({
