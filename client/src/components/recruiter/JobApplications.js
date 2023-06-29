@@ -4,16 +4,11 @@ import {
   Chip,
   Grid,
   IconButton,
-  InputAdornment,
   makeStyles,
   Paper,
-  TextField,
   Typography,
   Modal,
-  Slider,
   FormControlLabel,
-  FormGroup,
-  MenuItem,
   Checkbox,
   Avatar,
 } from "@material-ui/core";
@@ -380,7 +375,7 @@ const ApplicationTile = (props) => {
           setPopup({
             open: true,
             severity: "error",
-            message: "Error",
+            message: "No resume found",
           });
         });
     } else {
@@ -664,8 +659,10 @@ const JobApplications = (props) => {
   });
 
   useEffect(() => {
+    
     getData();
-  }, []);
+    // eslint-disable-next-line
+},[]);
 
   const getData = () => {
     let searchParams = [];

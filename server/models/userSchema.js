@@ -23,7 +23,7 @@ let schema = new mongoose.Schema(
   { collation: { locale: "en" } }
 );
 
-// Password hashing
+// Password hashing (mongoose pre hook)
 schema.pre("save", function (next) {
   let user = this;
 

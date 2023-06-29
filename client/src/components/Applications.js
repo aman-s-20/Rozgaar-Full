@@ -225,7 +225,9 @@ const Applications = (props) => {
   const [applications, setApplications] = useState([]);
 
   useEffect(() => {
+   
     getData();
+     // eslint-disable-next-line
   }, []);
 
   const getData = () => {
