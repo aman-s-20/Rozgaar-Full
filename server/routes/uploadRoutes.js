@@ -17,10 +17,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 // upload resume to folder
-router.post("/resume", upload.single("file"), uploadController.uploadResume());
+router.post("/resume", upload.single("file"), uploadController.uploadResume);
 
 // upload profile img to folder
-router.post("/profile", upload.single("file"), uploadController.uploadProfile());
+router.post("/profile", upload.single("file"), uploadController.uploadProfile);
  
 
 module.exports = router;
