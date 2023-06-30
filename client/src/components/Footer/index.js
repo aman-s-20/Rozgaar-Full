@@ -42,12 +42,8 @@ const Footer1 = () => {
               </div>
             </h3>
             <p>Aman Singh</p>
-            <p>+919305656344</p>
-            <p>amansingh30008@gmail.com</p>
             <br></br>
             <p>Anupam Singh</p>
-            <p>+918619591246</p>
-            <p>fracanupam577@gmail.com</p>
           </div>
           <div className="col">
             <h3>
