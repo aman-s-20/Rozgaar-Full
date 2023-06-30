@@ -26,7 +26,7 @@
 <!-- ## Resources 🔨
 
 - [Rozgaar](https://Rozgaar.vercel.app/)
-
+  
 ## Features :man_technologist:
 
 #### Added
@@ -69,75 +69,87 @@
 - Recruiters can add job details and it is stored in the backend. -->
 
 
-## How to run
+# clone the repository to your local machine
+$ git clone `git clone https://github.com/<YOUR-GITHUB-USERNAME>/Rozgaar-full.git`
 
-# Getting Started with Create React App
+# navigate to the project's directory and install all the relevant dev-dependencies
+$ cd article-backend && npm intsall
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Make a .env file and include the details MONGO=<mongodb_connection_uri> and JWT_SECRET=<jwt_secret_key> for JWT authentication
 
-## Available Scripts
+# Start application
+$ node index.js
 
-In the project directory, you can run:
+### For Job Seeker
+1. signup
+2. login
+3. update profile.
+4. apply job.
+5. rate job.
 
-### `npm start`
+### For Recruiter
+1. signup
+2. login
+3. update profile.
+4. create job.
+5. update job.
+6. delete job.
+7. view application for particular job.
+8. current Employees
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##    Collections 
 
-### `npm test`
+| Name             | DESCRIPTION                                                                     |
+| :--------------  | :------------------------------------------------------------------:            |
+| userauths        | it keeps user email, password and type                                          |
+| recruiterinfos   | it keeps the recruiter detail like [name, contactno., contact]                  |
+| jobapplicantinfos| it keeps the applicant detail like [name, education, skill ]                    |
+| jobs             | it keeps the detail of all jobs like [title, jobtype, maxapplicant]             |
+| applications     | it keeps the job appliaction status detail like [accepted, rejected, finished]  |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔨 API Endpoints
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`/api`
+| REQUEST METHODS | ENDPOINTS              | DESCRIPTION                                     |
+| :-------------- | :-------:              | ------------------------------------------:     |
+| POST            | /jobs                  | To add new job                                  |
+| GET             | /jobs                  | to get all the jobs                             |
+| GET             | /jobs/:id              | to get info about a particular job              |
+| PUT             | /jobs/:id              | to update info of a particular job              |
+| DELETE          | /jobs/:id              | to delete a job                                 |
+| POST            | /jobs/:id/applications | apply for a job                                 |
+| GET             | /jobs/:id/applications | recruiter gets applications for a particular job|
+| GET             | /user                  | get user's personal details                     |
+| PUT             | /user                  | update user details                             |  
+| GET             | /user/:id              | get user details from id                        |
+| GET             | /applications          | recruiter/applicant gets all his applications   |
+| PUT             | /applications/:id      | update status of application:                   |
+| GET             | /applicants            | get a list of final applicants for current job  |
+| PUT             | /rating                | to add or update a rating                       |
+| GET             | /rating                | get personal rating                             |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+`/auth`
+| REQUEST METHODS | ENDPOINTS | DESCRIPTION                    |
+| :-------------- | :-------: | ------------------:            |
+| POST            | /signup   | signup for applicant/recruiter |
+| POST            | /login    | login for applicant/recruiter  |
 
-Note: this is a one-way operation. Once you `eject`, you can't go back!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`/upload`
+| REQUEST METHODS | ENDPOINTS | DESCRIPTION                               |
+| :-------------- | :-------: | --------------------------------:         |
+| POST            | /resume   | upload resume to folder by applicant      |
+| POST            | /profile  | upload profile pic to folder by applicant |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`/host`
+| REQUEST METHODS | ENDPOINTS       | DESCRIPTION                    |
+| :-------------- | :-------:       | -----------------------------: |
+| GET             | /resume/:file   | get applicant resume           |
+| GET             | /profile/:file  | get applicant profile img      |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
