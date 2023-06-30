@@ -73,12 +73,12 @@
 $ git clone `git clone https://github.com/<YOUR-GITHUB-USERNAME>/Rozgaar-full.git`
 
 # navigate to the project's directory and install all the relevant dev-dependencies
-$ cd article-backend && npm intsall
+$ cd server && npm intsall
 
-# Make a .env file and include the details MONGO=<mongodb_connection_uri> and JWT_SECRET=<jwt_secret_key> for JWT authentication
+# Make a .env file and include the details MONGO=<mongodb_connection_uri>
 
 # Start application
-$ node index.js
+$ node server.js
 
 ### For Job Seeker
 1. signup
