@@ -266,7 +266,7 @@ const Applications = (props) => {
         item
         xs
         direction="column"
-        style={{ width: "100%",marginTop: "30px"}}
+        style={{width: "100%",marginTop: "50px", paddingTop: "180px"}}
         // alignItems="stretch"
         justify="center"
         className="apply1"
@@ -274,7 +274,7 @@ const Applications = (props) => {
 
         {applications.length > 0 ? (
           applications.map((obj) => (
-            <Grid item xs={24} sm={24} lg={6} style={{margin:"10px"}}>
+            <Grid item xs={24} sm={24} lg={24} style={{margin:"10px"}}>
               <ApplicationTile application={obj} />
             </Grid>
           ))
