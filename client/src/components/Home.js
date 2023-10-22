@@ -703,33 +703,22 @@ const Home = (props) => {
 
         <Grid
           container
-          item
-          xs
           direction="column"
           alignItems="stretch"
           justify="center"
-              >
-          {/* {jobs.length > 0 ? (
-            jobs.map((job) => {
-              return <JobTile job={job} />;
-            })
+        >
+          {jobs.length > 0 ? (
+            jobs.map((job) => (
+              <Grid item xs={12} style={{ margin: "10px" }}>
+                <JobTile job={job} />
+              </Grid>
+            ))
           ) : (
-            <Typography variant="h5" style={{ textAlign: "center" }}>
+            <Typography variant="h5" style={{ textAlign: "center", color: "white" }}>
               No jobs found
             </Typography>
-          )} */}
-           {jobs.length > 0 ? (
-          jobs.map((job) => (
-            <Grid item xs={24} sm={24} lg={6} style={{margin:"10px"}}>
-              <JobTile job={job} />
-            </Grid>
-          ))
-        ) : (
-          <Typography variant="h5" style={{ textAlign: "center",color:"white" }}>
-           No jobs found
-          </Typography>
-        )}
-        </Grid>
+          )}
+          </Grid>
         {/* <Grid item>
           <Pagination count={10} color="primary" />
         </Grid> */}
